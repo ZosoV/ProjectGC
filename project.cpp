@@ -27,6 +27,7 @@
 #define ObjToro 3
 #define ObjKlein 4
 #define ObjMobius 5
+#define ObjCuadrado 6
 // Global variables
 int windowWidth  = 500;     // Initial Screen and viewport width 
 int windowHeight = 500;     // Initil Screen and viewport height
@@ -200,12 +201,63 @@ void elipsoide(void)
     }
               
 }
+
+void base(int rx, int ry, int rz){
+    int nLatitud=30, nLongitud=30;
+    float vertex[3];
+    float incLongiutd, incLatitud;
+    incLatitud = 2*PI/nLatitud;
+    incLongiutd = 2*PI/nLongitud;
+    glColor3f(1.0,1.0,1.0);
+    for (int i=0; i<=nLatitud;i++){
+        glBegin(GL_TRIANGLE_STRIP);
+        for (int j=0; j<=nLongitud; j++){
+            vertex[0]=rx*cosh((j*incLongiutd))*cos((i+1)*incLatitud);
+            vertex[1]=ry*cosh((j*incLongiutd))*sin((i+1)*incLatitud);
+            vertex[2]=rz*sinh((j*incLongiutd));
+            glVertex3fv(vertex);
+            vertex[0]=rx*cosh((j*incLongiutd))*cos(i*incLatitud);
+            vertex[1]=ry*cosh((j*incLongiutd))*sin(i*incLatitud);
+            glVertex3fv(vertex);
+        }
+        glEnd();
+    }
+}
+
+void cuadrado(GLfloat lado){
+    GLfloat vertex[4][3] = {
+        {-lado,0.0f,-lado},{lado,0.0f,-lado},
+        {lado,0.0f,lado},{-lado,0.0f,lado}
+                            };
+    glBegin(GL_POLYGON);
+        for(int i = 0;i<4;i++){
+            glVertex3f(
+                vertex[i][0],
+                vertex[i][1],
+                vertex[i][2]
+            );
+        }
+
+    glEnd();
+}
+
+void tabla(GLfloat lado){
+    
+    glColor3f(1.0f,0.5f,0.7f);
+
+
+    
+}
 /* Initialize OpenGL Graphics */
 void initGL() 
 {
    glClearColor(0.0, 0.0, 0.0, 1.0); //   Set background (clear) color to black
    glNewList(ObjElipsoide, GL_COMPILE);	
          elipsoide();                       //    TODO: Draw object,  
+   glEndList();
+
+   glNewList(ObjCuadrado, GL_COMPILE);	
+         cuadrado(50);                       //    TODO: Draw object,  
    glEndList();
          //efecto de iluminacion
     //glEnable(GL_LIGHTING); //habilita luz natural
@@ -239,9 +291,9 @@ void display()
     //glScaled(10.0f,10.0f,10.0f);
     //glCallList(ObjKlein);
     
-    
-    
-    glCallList(ObjElipsoide);                              // TODO: Call Instance  ObjIcosahedron  
+    //glCallList(ObjCuadrado);
+    //base(50,50,50);
+    //glCallList(ObjElipsoide);                              // TODO: Call Instance  ObjIcosahedron  
     //glCallList(ObjMediaEsfera);                              // TODO: Call Instance  ObjIcosahedron  
     //glCallList(ObjToro);                              // TODO: Call Instance  ObjIcosahedron  
 

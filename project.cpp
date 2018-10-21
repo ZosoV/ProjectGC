@@ -71,12 +71,12 @@ void DrawAxis(void){
 }
 
 void tabla(int lado){
-    GLfloat Increment = 2*lado;      // translation unit in x directions
+    GLfloat Increment = lado;      // Espicficar el tamaño de los cuadrados
     GLfloat positionX = -windowWidth;
     GLfloat positionZ = -windowHeight;
 
-    int numPiezasAncho = 2*windowWidth/(lado*2);
-    int numPiezasAlto = 2*windowHeight/(lado*2);
+    int numPiezasAncho = 2*windowWidth/lado;
+    int numPiezasAlto = 2*windowHeight/lado;
 
     for(int i = 0;i<numPiezasAlto;i++){
         for(int j=0;j<numPiezasAncho;j++){
@@ -137,7 +137,7 @@ void display() {
    glRotatef(angleTheta[1], 0.0, 1.0, 0.0);
     
     //Dibujo un tablero
-    tabla(50);
+    tabla(100);
    
    /* Draw object */
    glPolygonMode(GL_FRONT, GL_LINE);

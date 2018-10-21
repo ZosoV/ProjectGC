@@ -255,8 +255,8 @@ void oreja(GLfloat lado, GLfloat altura){
 }
 void cuadrado(GLfloat lado){
     GLfloat vertex[4][3] = {
-        {-lado,0.0f,-lado},{lado,0.0f,-lado},
-        {lado,0.0f,lado},{-lado,0.0f,lado}
+        {-lado/2,0.0f,-lado/2},{lado/2,0.0f,-lado/2},
+        {lado/2,0.0f,lado/2},{-lado/2,0.0f,lado/2}
                             };
     glBegin(GL_POLYGON);
         for(int i = 0;i<4;i++){

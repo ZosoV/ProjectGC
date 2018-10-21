@@ -51,37 +51,8 @@ void reina(void){
     glPopMatrix();
 }
 
-float peon[12][3]={
-    {0.0, 0.0, 0.0},
-    {0.0, 50.0, 0.0},
-    {10.0, 50.0, 0.0},
-    {15.0, 20.0, 0.0},
-    {25.0, 10.0, 0.0},
-    {50.0, 10.0, 0.0},
-    {60.0, 20.0, 0.0},
-    {70.0, 10.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {90.0, 20.0, 0.0},
-    {100.0, 10.0, 0.0},
-    {100.0, 0.0, 0.0},
-};
-
-float newpeon[12][3]={
-    {0.0, 0.0, 0.0},
-    {0.0, 50.0, 0.0},
-    {10.0, 50.0, 0.0},
-    {15.0, 20.0, 0.0},
-    {25.0, 10.0, 0.0},
-    {50.0, 10.0, 0.0},
-    {60.0, 20.0, 0.0},
-    {70.0, 10.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {90.0, 20.0, 0.0},
-    {100.0, 10.0, 0.0},
-    {100.0, 0.0, 0.0},
-};
-
-float alfil[15][3]={
+void DrawAlfil(void){ 
+    float alfil[15][3]={
     {0.0, 0.0, 0.0},
     {0.0, 50.0, 0.0},
     {10.0, 50.0, 0.0},
@@ -97,9 +68,9 @@ float alfil[15][3]={
     {120.0, 4.0, 0.0},
     {130.0, 2.0, 0.0},
     {140.0, 0.0, 0.0},
-};
+    };
 
-float newalfil[15][3]={
+    float newalfil[15][3]={
     {0.0, 0.0, 0.0},
     {0.0, 50.0, 0.0},
     {10.0, 50.0, 0.0},
@@ -115,112 +86,8 @@ float newalfil[15][3]={
     {120.0, 4.0, 0.0},
     {130.0, 2.0, 0.0},
     {140.0, 0.0, 0.0},
-};
+    };
 
-float rey[8][3]{
-    {0.0, 0.0, 0.0},
-    {0.0, 50.0, 0.0},
-    {10.0, 50.0, 0.0},
-    {15.0, 20.0, 0.0},
-    {25.0, 10.0, 0.0},
-    {70.0, 10.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {90.0, 10.0, 0.0},
-};
-
-float newrey[8][3]{
-    {0.0, 0.0, 0.0},
-    {0.0, 50.0, 0.0},
-    {10.0, 50.0, 0.0},
-    {15.0, 20.0, 0.0},
-    {25.0, 10.0, 0.0},
-    {70.0, 10.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {90.0, 10.0, 0.0},
-};
-
-float tubo[6][3]{
-    {0.0, 0.0, 0.0},
-    {0.0, 10.0, 0.0},
-    {20.0, 10.0, 0.0},
-    {40.0, 10.0, 0.0},
-    {60.0, 10.0, 0.0},
-    {60.0, 0.0, 0.0},
-};
-
-float newtubo[6][3]{
-    {0.0, 0.0, 0.0},
-    {0.0, 10.0, 0.0},
-    {20.0, 10.0, 0.0},
-    {40.0, 10.0, 0.0},
-    {60.0, 10.0, 0.0},
-    {60.0, 0.0, 0.0},
-};
-
-float torre1[12][3]{
-    {20.0, 0.0, 0.0},
-    {20.0, 20.0, 0.0},
-    {0.0, 20.0, 0.0},
-    {0.0, 30.0, 0.0},
-    {35.0, 30.0, 0.0},
-    {35.0, 15.0, 0.0},
-    {65.0, 15.0, 0.0},
-    {65.0, 30.0, 0.0},
-    {100.0, 30.0, 0.0},
-    {100.0, 20.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {80.0, 0.0, 0.0},
-};
-
-float newtorre1[12][3]{
-    {20.0, 0.0, 0.0},
-    {20.0, 20.0, 0.0},
-    {0.0, 20.0, 0.0},
-    {0.0, 30.0, 0.0},
-    {35.0, 30.0, 0.0},
-    {35.0, 15.0, 0.0},
-    {65.0, 15.0, 0.0},
-    {65.0, 30.0, 0.0},
-    {100.0, 30.0, 0.0},
-    {100.0, 20.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {80.0, 0.0, 0.0},
-};
-
-float torre2[12][3]{
-    {20.0, 0.0, 0.0},
-    {20.0, 20.0, 0.0},
-    {10.0, 20.0, 0.0},
-    {10.0, 30.0, 0.0},
-    {35.0, 30.0, 0.0},
-    {35.0, 15.0, 0.0},
-    {65.0, 15.0, 0.0},
-    {65.0, 30.0, 0.0},
-    {90.0, 30.0, 0.0},
-    {90.0, 20.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {80.0, 0.0, 0.0},
-};
-
-float newtorre2[12][3]{
-    {20.0, 0.0, 0.0},
-    {20.0, 20.0, 0.0},
-    {10.0, 20.0, 0.0},
-    {10.0, 30.0, 0.0},
-    {35.0, 30.0, 0.0},
-    {35.0, 15.0, 0.0},
-    {65.0, 15.0, 0.0},
-    {65.0, 30.0, 0.0},
-    {90.0, 30.0, 0.0},
-    {90.0, 20.0, 0.0},
-    {80.0, 20.0, 0.0},
-    {80.0, 0.0, 0.0},
-};
-
-
-
-void DrawAlfil()
-{ 
     int slices = 10;
     GLfloat theta = (2*PI) /slices;
     glColor3f(0.38f, 0.0f, 0.64f);
@@ -243,11 +110,40 @@ void DrawAlfil()
         }      
     }    
               // End Drawing The Cube
-glFlush();
+    glFlush();
 }
 
-void DrawPeon()
-{ 
+void DrawPeon(void){ 
+    float peon[12][3]={
+    {0.0, 0.0, 0.0},
+    {0.0, 50.0, 0.0},
+    {10.0, 50.0, 0.0},
+    {15.0, 20.0, 0.0},
+    {25.0, 10.0, 0.0},
+    {50.0, 10.0, 0.0},
+    {60.0, 20.0, 0.0},
+    {70.0, 10.0, 0.0},
+    {80.0, 20.0, 0.0},
+    {90.0, 20.0, 0.0},
+    {100.0, 10.0, 0.0},
+    {100.0, 0.0, 0.0},
+    };
+
+    float newpeon[12][3]={
+    {0.0, 0.0, 0.0},
+    {0.0, 50.0, 0.0},
+    {10.0, 50.0, 0.0},
+    {15.0, 20.0, 0.0},
+    {25.0, 10.0, 0.0},
+    {50.0, 10.0, 0.0},
+    {60.0, 20.0, 0.0},
+    {70.0, 10.0, 0.0},
+    {80.0, 20.0, 0.0},
+    {90.0, 20.0, 0.0},
+    {100.0, 10.0, 0.0},
+    {100.0, 0.0, 0.0},
+    };
+
     int slices = 10;
     GLfloat theta = (2*PI) /slices;
     glColor3f(0.38f, 0.0f, 0.64f);
@@ -268,38 +164,34 @@ void DrawPeon()
             peon[i][1]= newpeon[i][1];
             peon[i][2]= newpeon[i][2];
         }      
-    }    
-              // End Drawing The Cube
-glFlush();
-}
-
-void DrawTubo(){
-    int slices = 10;
-
-    GLfloat theta = (2*PI) /slices;
-    glColor3f(0.38f, 0.0f, 0.64f);
-    for (int r=0; r<slices; r++){
-        glBegin(GL_LINE_STRIP); 
-        for (int i=0; i<sizeof(tubo)/sizeof(tubo[0]); i++){
-            glVertex3f(tubo[i][0], tubo[i][1], tubo[i][2]);
-            newtubo[i][0]= tubo[i][0];
-            newtubo[i][1]= (cos(theta)*tubo[i][1])-(sin(theta)*tubo[i][2]);
-            newtubo[i][2]= (sin(theta)*tubo[i][1])+(cos(theta)*tubo[i][2]);
-        }glEnd();
-        for (int i=0; i<sizeof(rey)/sizeof(rey[0]); i++){
-            glBegin(GL_LINE_STRIP); 
-                glVertex3f(tubo[i][0], tubo[i][1], tubo[i][2]);
-                glVertex3f(newtubo[i][0], newtubo[i][1], newtubo[i][2]);
-            glEnd();
-            tubo[i][0]= newtubo[i][0];
-            tubo[i][1]= newtubo[i][1];
-            tubo[i][2]= newtubo[i][2];
-        }      
-    }    // End Drawing The Cube
+    }              // End Drawing The Cube
     glFlush();
 }
 
-void DrawRey(){
+void DrawRey(void){
+
+    float rey[8][3]{
+    {0.0, 0.0, 0.0},
+    {0.0, 50.0, 0.0},
+    {10.0, 50.0, 0.0},
+    {15.0, 20.0, 0.0},
+    {25.0, 10.0, 0.0},
+    {70.0, 10.0, 0.0},
+    {80.0, 20.0, 0.0},
+    {90.0, 10.0, 0.0},
+    };
+
+    float newrey[8][3]{
+    {0.0, 0.0, 0.0},
+    {0.0, 50.0, 0.0},
+    {10.0, 50.0, 0.0},
+    {15.0, 20.0, 0.0},
+    {25.0, 10.0, 0.0},
+    {70.0, 10.0, 0.0},
+    {80.0, 20.0, 0.0},
+    {90.0, 10.0, 0.0},
+    };
+
     int slices = 10;
 
     GLfloat theta = (2*PI) /slices;
@@ -335,57 +227,7 @@ void DrawRey(){
     glFlush();
 }
 
-void DrawTorre1(){
-    int tslices = 3;
-    GLfloat theta = (2*PI) /(8*tslices);
-    glColor3f(0.38f, 0.0f, 0.64f);
-    for (int r=0; r<tslices; r++){
-        glBegin(GL_LINE_STRIP); 
-        for (int i=0; i<sizeof(torre1)/sizeof(torre1[0]); i++){
-            glVertex3f(torre1[i][0], torre1[i][1], torre1[i][2]);
-            newtorre1[i][0]= torre1[i][0];
-            newtorre1[i][1]= (cos(theta)*torre1[i][1])-(sin(theta)*torre1[i][2]);
-            newtorre1[i][2]= (sin(theta)*torre1[i][1])+(cos(theta)*torre1[i][2]);
-        }glEnd();
-        for (int i=0; i<sizeof(torre1)/sizeof(newtorre1[0]); i++){
-            glBegin(GL_LINE_STRIP); 
-                glVertex3f(torre1[i][0], torre1[i][1], torre1[i][2]);
-                glVertex3f(newtorre1[i][0], newtorre1[i][1], newtorre1[i][2]);
-            glEnd();
-            torre1[i][0]= newtorre1[i][0];
-            torre1[i][1]= newtorre1[i][1];
-            torre1[i][2]= newtorre1[i][2];
-        }      
-    }    // End Drawing The Cube
-    glFlush();
-}
-
-void DrawTorre2(){
-    int tslices = 3;
-    GLfloat theta = (2*PI) /(8*tslices);
-    glColor3f(0.38f, 0.0f, 0.64f);
-    for (int r=0; r<tslices; r++){
-        glBegin(GL_LINE_STRIP); 
-        for (int i=0; i<sizeof(torre2)/sizeof(torre2[0]); i++){
-            glVertex3f(torre2[i][0], torre2[i][1], torre2[i][2]);
-            newtorre2[i][0]= torre2[i][0];
-            newtorre2[i][1]= (cos(theta)*torre2[i][1])-(sin(theta)*torre2[i][2]);
-            newtorre2[i][2]= (sin(theta)*torre2[i][1])+(cos(theta)*torre2[i][2]);
-        }glEnd();
-        for (int i=0; i<sizeof(torre2)/sizeof(newtorre2[0]); i++){
-            glBegin(GL_LINE_STRIP); 
-                glVertex3f(torre2[i][0], torre2[i][1], torre2[i][2]);
-                glVertex3f(newtorre2[i][0], newtorre2[i][1], newtorre2[i][2]);
-            glEnd();
-            torre2[i][0]= newtorre2[i][0];
-            torre2[i][1]= newtorre2[i][1];
-            torre2[i][2]= newtorre2[i][2];
-        }      
-    }    // End Drawing The Cube
-    glFlush();
-}
-
-void DrawTorre(){
+void DrawTorre(void){
     glPushMatrix();
     for (int i=1;i<=4;i++){
         DrawTorre1();

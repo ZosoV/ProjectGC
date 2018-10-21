@@ -19,6 +19,8 @@
 #include <math.h>
 #define PI 3.14159265f
 
+//Tomar en cuenta que las matrices empleadas aqui deben ser las transpuestas 
+//a las que comunmente vemos en clases
 void traslation(GLfloat tx, GLfloat ty, GLfloat tz){
     GLfloat m[16] = {
      1.0,   0.0,   0.0, 0.0,

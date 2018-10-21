@@ -133,8 +133,8 @@ void display() {
    //Dibujo un tablero
    //tabla(25);
     glPushMatrix();                               // TODO: Save State Matrix
-   glRotatef(angleTheta[0], 1.0, 0.0, 0.0);
-   glRotatef(angleTheta[1], 0.0, 1.0, 0.0);
+   rotation(angleTheta[0], 1.0, 0.0, 0.0);
+   rotation(angleTheta[1], 0.0, 1.0, 0.0);
     
     //Dibujo un tablero
     tabla(100);

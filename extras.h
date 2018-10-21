@@ -61,6 +61,9 @@ void base(GLfloat rMayor, GLfloat rMedio,GLfloat rMenor){
 
   }
 }
+
+//Se grafica el cuerpo del caballo por separado rotando mitad y mitad el pecho y
+//espalda respectivamente
 void cuerpo(void){
       int numVertices = 4;
   GLfloat derecho[numVertices][3] = {
@@ -153,6 +156,7 @@ void cuerpo(void){
   }
 }
 
+//Para la cabeza de caballo y para adornos de la reina
 void esfera(GLfloat r, GLfloat posx, GLfloat posy, GLfloat posz){
     int nlatitude = 10, nlongitude = 10;
     GLfloat varSlicesLat = 2*PI /nlatitude; //Respecto a Z
@@ -177,6 +181,8 @@ void esfera(GLfloat r, GLfloat posx, GLfloat posy, GLfloat posz){
         
     }
 }
+
+//Para el hocico del caballo
 void cubo(GLfloat lMayor, GLfloat lmenor,GLfloat profundidad){
     
     glPushMatrix();
@@ -217,6 +223,7 @@ void cubo(GLfloat lMayor, GLfloat lmenor,GLfloat profundidad){
    glPopMatrix();
 }
 
+//Orejas del caballo
 void oreja(GLfloat lado, GLfloat altura){
     glPushMatrix();
     glTranslatef(5.0,90.0,-1.0);
@@ -253,6 +260,8 @@ void oreja(GLfloat lado, GLfloat altura){
    glEnd();
    glPopMatrix();
 }
+
+//Para dibujar el tablero
 void cuadrado(GLfloat lado){
     GLfloat vertex[4][3] = {
         {-lado/2,0.0f,-lado/2},{lado/2,0.0f,-lado/2},
@@ -270,6 +279,7 @@ void cuadrado(GLfloat lado){
     glEnd();
 }
 
+//Para los aros de la reina
 void cilindroHueco(GLfloat rExterno, GLfloat rInterno,GLfloat altura){
     int numVertices = 4 ;
     GLfloat vertices[numVertices][3] = {
@@ -306,6 +316,7 @@ void cilindroHueco(GLfloat rExterno, GLfloat rInterno,GLfloat altura){
   }
 }
 
+//Para la forma de la reina
 void casiCono(GLfloat rInferior, GLfloat rSuperior,GLfloat altura){
     int numVertices = 2;
     GLfloat vertices[numVertices][3]={
@@ -341,6 +352,7 @@ void casiCono(GLfloat rInferior, GLfloat rSuperior,GLfloat altura){
   }
 }
 
+//Corona de la reina
 void corona(GLfloat rMayor, GLfloat rMenor){
     int numVertices = 5;
     GLfloat vertices[numVertices][3]={
@@ -377,6 +389,8 @@ void corona(GLfloat rMayor, GLfloat rMenor){
 
   }
 }
+
+//Para la cabeza de la reina
 void mediaEsfera(GLfloat r){   
     int nlatitude = 20, nlongitude = 20;
     GLfloat varSlicesLat = (PI/2)/nlatitude; //Respecto a Z fi =>Latitud

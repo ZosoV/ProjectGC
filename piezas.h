@@ -19,6 +19,7 @@
 #include <time.h>
 #include <math.h>
 #define PI 3.14159265f
+
 void caballo(void){
     base(50,20,10);
     cuerpo();
@@ -90,7 +91,6 @@ void DrawAlfil(void){
 
     int slices = 10;
     GLfloat theta = (2*PI) /slices;
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<slices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(alfil)/sizeof(alfil[0]); i++){
@@ -146,7 +146,6 @@ void DrawPeon(void){
 
     int slices = 10;
     GLfloat theta = (2*PI) /slices;
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<slices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(peon)/sizeof(peon[0]); i++){
@@ -195,7 +194,6 @@ void DrawRey(void){
     int slices = 10;
 
     GLfloat theta = (2*PI) /slices;
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<slices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(rey)/sizeof(rey[0]); i++){
@@ -215,11 +213,11 @@ void DrawRey(void){
         }      
     }    // End Drawing The Cube
     glPushMatrix();
-     glTranslatef(90.0,0.0,0.0);
+     traslation(90.0,0.0,0.0);
      glPushMatrix();
-     glTranslatef(30.0,0.0,0.0);
-     glRotatef(90.0f,0.0f,1.0f,0.0f);
-     glTranslatef(-30.0,0.0,0.0);
+     traslation(30.0,0.0,0.0);
+     rotation(90.0f,0.0f,1.0f,0.0f);
+     traslation(-30.0,0.0,0.0);
      DrawTubo();
      glPopMatrix();
      DrawTubo();
@@ -231,8 +229,9 @@ void DrawTorre(void){
     glPushMatrix();
     for (int i=1;i<=4;i++){
         DrawTorre1();
-        glRotatef(45.0f,1.0f,0.0f,0.0f);
+        rotation(45.0f,1.0f,0.0f,0.0f);
         DrawTorre2();
+        rotation(45.0f,1.0f,0.0f,0.0f);
     }
     glPopMatrix();
 }

@@ -164,7 +164,7 @@ void esfera(GLfloat r, GLfloat posx, GLfloat posy, GLfloat posz){
 
     GLfloat vertex[3];
 
-    glColor3f(1.0f,1.0f,1.0f);
+
     for(int i = 0;i<=nlatitude;i++){  //Respecto a Z
         glBegin(GL_TRIANGLE_STRIP);
         for(int j=0;j<=nlongitude;j++){ //Respecto a X
@@ -398,7 +398,6 @@ void mediaEsfera(GLfloat r){
 
     GLfloat vertex[3];
 
-    glColor3f(1.0f,1.0f,1.0f);
     for(int i = 0;i<=nlatitude;i++){  //Respecto a Z
         glBegin(GL_TRIANGLE_STRIP);
         for(int j=0;j<=nlongitude;j++){ //Respecto a X
@@ -440,7 +439,6 @@ void DrawTubo(void){
     int slices = 10;
 
     GLfloat theta = (2*PI) /slices;
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<slices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(tubo)/sizeof(tubo[0]); i++){
@@ -496,7 +494,6 @@ void DrawTorre1(void){
 
     int tslices = 3;
     GLfloat theta = (2*PI) /(8*tslices);
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<tslices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(torre1)/sizeof(torre1[0]); i++){
@@ -552,7 +549,6 @@ void DrawTorre2(void){
 
     int tslices = 3;
     GLfloat theta = (2*PI) /(8*tslices);
-    glColor3f(0.38f, 0.0f, 0.64f);
     for (int r=0; r<tslices; r++){
         glBegin(GL_LINE_STRIP); 
         for (int i=0; i<sizeof(torre2)/sizeof(torre2[0]); i++){
